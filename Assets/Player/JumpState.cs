@@ -7,24 +7,20 @@ public class JumpState : PlayerState
     public JumpState(PlayerController player, PlayerStateMachine stateMachine)
         : base(player, stateMachine) { }
 
-    public override void Enter()
+    public override void Enter() // jumpForce만큼의 힘을 캐릭터에게 위로 가함
     {
         base.Enter();
         airTime = 0f;
         player.SetVelocityY(player.jumpForce);
         player.animator.Play("Jump");
-        //Debug.Log("JumpState: Enter");
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-
         airTime += Time.deltaTime;
-
-        if (airTime >= minAirTime)
+        if (airTime >= minAirTime)//0.3초 뒤 FallState로 전환
         {
-            //Debug.Log("JumpState: Landed");
             stateMachine.ChangeState(player.fallState);
         }
     }

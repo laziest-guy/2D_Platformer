@@ -1,0 +1,12 @@
+Player 폴더
+State 패턴 기반 플레이어 컴포넌트를 위한 코드
+
+PlayerState.cs : 
+    PlayerState의 추상 클래스, 즉 State의 형식을 정의
+    보고서 양식처럼 모양만 잡혀있고 양식에 맞춰 내용을 작성해야만 작동할 수 있음.
+PlayerStateMachine.cs : 
+    PlayerState를 가지고 있으며, State 전환을 위한 함수를 가진 PlayerStateMachine을 정의
+PlayerController.cs :
+    씬의 플레이어 오브젝트에 직접 넣는 컴포넌트. 실질적인 구동 역할
+~State.cs :
+    각 State 정의

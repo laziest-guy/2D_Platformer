@@ -1,0 +1,6 @@
+기본 클래스로 Interactable을 정의 후
+적, 상호작용 오브젝트 모두 Interactable의 자손으로 생성 후
+Interact 가상 함수를 각자 용도에 맞게 구현
+
+Enemy.cs :
+    Enemy라기엔 만든 거 없음. 디버깅용 메시지 출력 기능만 존재

@@ -13,7 +13,7 @@ public class FallState : PlayerState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        if (player.IsGrounded())
+        if (player.IsGrounded())//땅에 닿으면 idleState 전환
         {
             stateMachine.ChangeState(player.idleState);
         }
