@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
 
+    public Transform respawnPoint; // 부활할 위치를 담을 변수 추가
+
+
     //SateMachine 및 각 State 선언
     private PlayerStateMachine stateMachine;
     [HideInInspector] public IdleState idleState;
@@ -107,4 +110,11 @@ public class PlayerController : MonoBehaviour
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
     */
+    
+    public void RespawnPlayer()
+    {
+        // 플레이어의 위치를 부활 지점으로 이동
+        transform.position = respawnPoint.position;
+        Debug.Log("플레이어가 부활했습니다!");
+    }
 }
